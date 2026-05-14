@@ -3,152 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>極致味蕾饗宴 | 頂級私廚</title>
+    <title>營養師ㄟ毛小孩 | 頂級寵物膳食與保健</title>
     <style>
         /* 基礎重置與全域設定 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Noto Serif TC', serif, "Apple LiGothic Medium", "Microsoft JhengHei";
-            background-color: #0a0a0a;
-            color: #f5f5f5;
-            line-height: 1.6;
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: #FAF9F6; /* 溫暖的米白色背景 */
+            color: #333;
+            line-height: 1.8;
         }
 
         /* 導覽列 */
         header {
             position: fixed;
             top: 0; width: 100%;
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid #333;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        header .logo { font-size: 24px; font-weight: bold; color: #d4af37; letter-spacing: 2px; }
+        header .logo { font-size: 22px; font-weight: bold; color: #2C3E50; }
         header nav a {
-            color: #fff;
+            color: #555;
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
+            margin-left: 25px;
+            font-size: 15px;
+            font-weight: 500;
             transition: color 0.3s;
         }
-        header nav a:hover { color: #d4af37; }
+        header nav a:hover { color: #D4AF37; }
 
         /* 首圖區 (Hero Section) */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1544025162-811114cd354c?q=80&w=2000&auto=format&fit=crop') center/cover;
+            /* 使用可愛且有質感的白色狗狗圖片 */
+            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 20px;
         }
-        .hero h1 { font-size: 3rem; color: #d4af37; margin-bottom: 20px; letter-spacing: 5px; }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; font-weight: 300; }
-        .btn-gold {
-            padding: 15px 40px;
-            background-color: #d4af37;
-            color: #000;
+        .hero h1 { font-size: 3.5rem; color: #2C3E50; margin-bottom: 20px; font-weight: 800; letter-spacing: 2px; }
+        .hero p { font-size: 1.2rem; color: #444; max-width: 650px; margin-bottom: 40px; font-weight: 500; }
+        .btn-primary {
+            padding: 15px 45px;
+            background-color: #2C3E50;
+            color: #fff;
             text-decoration: none;
             font-size: 16px;
             font-weight: bold;
-            border-radius: 2px;
+            border-radius: 30px;
             transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .btn-gold:hover { background-color: #b5952f; transform: scale(1.05); }
+        .btn-primary:hover { background-color: #1a252f; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); color: #fff; }
 
         /* 介紹區塊 */
         section { padding: 100px 20px; text-align: center; }
-        .section-title { font-size: 2rem; color: #d4af37; margin-bottom: 20px; letter-spacing: 3px; }
-        .section-subtitle { font-size: 1rem; color: #888; margin-bottom: 50px; }
+        .section-title { font-size: 2.2rem; color: #2C3E50; margin-bottom: 15px; font-weight: bold; }
+        .section-subtitle { font-size: 1.1rem; color: #D4AF37; margin-bottom: 60px; font-weight: bold; letter-spacing: 1px; }
 
-        /* 菜單特色區 */
-        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto; }
+        /* 產品特色區 */
+        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1100px; margin: 0 auto; }
         .feature-box {
-            background: #111;
-            padding: 40px 20px;
-            border: 1px solid #222;
-            width: calc(33.333% - 20px);
-            min-width: 280px;
-            transition: transform 0.3s;
+            background: #fff;
+            padding: 50px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            width: calc(33.333% - 40px);
+            min-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
         }
-        .feature-box:hover { transform: translateY(-10px); border-color: #d4af37; }
-        .feature-box h3 { color: #d4af37; margin-bottom: 15px; }
-        .feature-box p { font-size: 0.9rem; color: #aaa; }
+        .feature-box:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-top: 4px solid #D4AF37; }
+        .feature-box .icon { font-size: 40px; margin-bottom: 20px; }
+        .feature-box h3 { color: #2C3E50; margin-bottom: 15px; font-size: 1.4rem; }
+        .feature-box p { font-size: 1rem; color: #666; text-align: justify; }
 
-        /* 預約區塊 */
-        .booking { background-color: #111; border-top: 1px solid #333; }
+        /* 品牌理念區塊 */
+        .about-section { background-color: #fff; }
         
+        /* 購買/客服區塊 */
+        .cta-section { background-color: #F4F1EA; }
+
         /* 頁尾 */
-        footer { padding: 30px; text-align: center; font-size: 0.8rem; color: #555; background: #000; }
+        footer { padding: 40px; text-align: center; font-size: 0.9rem; color: #888; background: #fff; border-top: 1px solid #eee; }
 
         /* 手機版適應 */
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 15px; }
             header nav { margin-top: 15px; }
-            header nav a { margin: 0 10px; }
-            .hero h1 { font-size: 2rem; }
+            header nav a { margin: 0 10px; font-size: 14px; }
+            .hero h1 { font-size: 2.2rem; }
+            .feature-box { width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">LUXURY DINING</div>
+        <div class="logo">營養師ㄟ毛小孩</div>
         <nav>
             <a href="#about">品牌理念</a>
-            <a href="#menu">極致饗宴</a>
-            <a href="#booking">專屬預約</a>
+            <a href="#products">頂級營養配方</a>
+            <a href="#contact">專屬諮詢</a>
         </nav>
     </header>
 
     <div class="hero">
-        <h1>五感交織的極致饗宴</h1>
-        <p>嚴選頂級食材，揉合職人鐵板工藝與創新手法，為您獻上獨一無二的私廚體驗。</p>
-        <a href="#booking" class="btn-gold">展開品味之旅</a>
+        <h1>給寶貝最頂級的營養照護</h1>
+        <p>捨不得毛孩受一點委屈。我們以專業營養學為基礎，嚴選頂級食材與專利保健配方，為您的毛孩打造由內而外的極致健康基礎。</p>
+        <a href="#contact" class="btn-primary">探索專屬營養方案</a>
     </div>
 
-    <section id="about">
-        <h2 class="section-title">職人匠心</h2>
-        <p class="section-subtitle">The Philosophy</p>
-        <div style="max-width: 600px; margin: 0 auto; color: #ccc;">
-            <p>我們深信，真正的高端餐飲不僅是味覺的滿足，更是靈魂的共鳴。從溫體嚴選的極致肉品到每日產地直送的珍稀海味，每一道料理都蘊含著對食材的最高敬意。</p>
+    <section id="about" class="about-section">
+        <h2 class="section-title">嚴格把關，只給最好的</h2>
+        <p class="section-subtitle">Professional & Pure</p>
+        <div style="max-width: 800px; margin: 0 auto; color: #555; font-size: 1.1rem;">
+            <p>市面上的產品眼花撩亂，但吃進肚子裡的，我們絕不妥協。<br><br>我們深知每一位毛孩都是父母的心頭肉。從日常的高端鮮食配方，到針對體質調養的專業保健品，所有成分皆經過嚴格檢驗。不添加多餘負擔，只保留最純粹、最高效的營養價值。</p>
         </div>
     </section>
 
-    <section id="menu" style="background: #0a0a0a;">
-        <h2 class="section-title">經典雋永</h2>
-        <p class="section-subtitle">Signature Selection</p>
+    <section id="products">
+        <h2 class="section-title">明星護理系列</h2>
+        <p class="section-subtitle">Premium Care Selections</p>
         <div class="features">
             <div class="feature-box">
-                <h3>極黑和牛</h3>
-                <p>油花如大理石般細緻分佈，經過精準火候煎烤，入口即化，肉汁鮮甜飽滿。</p>
+                <div class="icon">🦠</div>
+                <h3>專利頂級寵物益生菌</h3>
+                <p>打造強健腸道屏障！嚴選專利菌株，高定殖率幫助吸收消化，從根本調理體質，讓毛孩告別腸胃不適，便便漂亮不臭。</p>
             </div>
             <div class="feature-box">
-                <h3>深海珍稀</h3>
-                <p>空運來台活體海鮮，保留最原始的純粹鮮甜，海味在舌尖綻放。</p>
+                <div class="icon">🦐</div>
+                <h3>純淨南極磷蝦油</h3>
+                <p>富含超強抗氧化力與 Omega-3。獨家萃取技術保留最高活性，有效保護關節靈活度，並讓毛髮重現閃耀光澤。</p>
             </div>
             <div class="feature-box">
-                <h3>時令珍釀</h3>
-                <p>專業侍酒師為每一道餐點嚴選佐餐佳釀，將料理層次昇華至全新境界。</p>
+                <div class="icon">🌿</div>
+                <h3>天然純粹螺旋藻</h3>
+                <p>被譽為超級食物的極致營養。富含多種維生素與礦物質，全方位提升免疫力，為毛孩注入滿滿的健康活力。</p>
             </div>
         </div>
     </section>
 
-    <section id="booking" class="booking">
-        <h2 class="section-title">尊榮入席</h2>
-        <p class="section-subtitle">席次有限，採完全預約制</p>
-        <p style="margin-bottom: 40px; color: #ccc;">為確保服務品質與食材鮮度，請透過我們的官方客服進行預約與客製化需求討論。</p>
-        <!-- 這裡可以換成你的 LINE 官方帳號連結 -->
-        <a href="https://line.me/tw/" class="btn-gold" target="_blank">聯繫 LINE 官方專員</a>
+    <section id="contact" class="cta-section">
+        <h2 class="section-title">量身定制營養計畫</h2>
+        <p class="section-subtitle">客製化諮詢與訂購</p>
+        <p style="margin-bottom: 40px; color: #555; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+            每隻毛孩的體質與需求都不同。<br>加入我們的 LINE 官方帳號，由專業團隊為您的寶貝（像我們家丸丸一樣可愛的毛孩們！）提供專屬的飲食建議與保健規劃。
+        </p>
+        <br>
+        <!-- 請將下面 href 裡的網址換成你的 LINE 官方帳號連結，或是 Manychat 的觸發連結 -->
+        <a href="https://line.me/tw/" class="btn-primary" target="_blank">立即加入 LINE 官方帳號諮詢</a>
     </section>
 
     <footer>
-        &copy; 2026 Luxury Dining. All Rights Reserved.
+        &copy; 2026 營養師ㄟ毛小孩. All Rights Reserved. | 給毛孩最純粹的愛
     </footer>
 
 </body>
