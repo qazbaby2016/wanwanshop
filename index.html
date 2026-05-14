@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>極致味蕾饗宴 | 頂級私廚</title>
+    <style>
+        /* 基礎重置與全域設定 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Serif TC', serif, "Apple LiGothic Medium", "Microsoft JhengHei";
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* 導覽列 */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+        header .logo { font-size: 24px; font-weight: bold; color: #d4af37; letter-spacing: 2px; }
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        header nav a:hover { color: #d4af37; }
+
+        /* 首圖區 (Hero Section) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1544025162-811114cd354c?q=80&w=2000&auto=format&fit=crop') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3rem; color: #d4af37; margin-bottom: 20px; letter-spacing: 5px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; font-weight: 300; }
+        .btn-gold {
+            padding: 15px 40px;
+            background-color: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .btn-gold:hover { background-color: #b5952f; transform: scale(1.05); }
+
+        /* 介紹區塊 */
+        section { padding: 100px 20px; text-align: center; }
+        .section-title { font-size: 2rem; color: #d4af37; margin-bottom: 20px; letter-spacing: 3px; }
+        .section-subtitle { font-size: 1rem; color: #888; margin-bottom: 50px; }
+
+        /* 菜單特色區 */
+        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .feature-box {
+            background: #111;
+            padding: 40px 20px;
+            border: 1px solid #222;
+            width: calc(33.333% - 20px);
+            min-width: 280px;
+            transition: transform 0.3s;
+        }
+        .feature-box:hover { transform: translateY(-10px); border-color: #d4af37; }
+        .feature-box h3 { color: #d4af37; margin-bottom: 15px; }
+        .feature-box p { font-size: 0.9rem; color: #aaa; }
+
+        /* 預約區塊 */
+        .booking { background-color: #111; border-top: 1px solid #333; }
+        
+        /* 頁尾 */
+        footer { padding: 30px; text-align: center; font-size: 0.8rem; color: #555; background: #000; }
+
+        /* 手機版適應 */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; }
+            header nav { margin-top: 15px; }
+            header nav a { margin: 0 10px; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LUXURY DINING</div>
+        <nav>
+            <a href="#about">品牌理念</a>
+            <a href="#menu">極致饗宴</a>
+            <a href="#booking">專屬預約</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>五感交織的極致饗宴</h1>
+        <p>嚴選頂級食材，揉合職人鐵板工藝與創新手法，為您獻上獨一無二的私廚體驗。</p>
+        <a href="#booking" class="btn-gold">展開品味之旅</a>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">職人匠心</h2>
+        <p class="section-subtitle">The Philosophy</p>
+        <div style="max-width: 600px; margin: 0 auto; color: #ccc;">
+            <p>我們深信，真正的高端餐飲不僅是味覺的滿足，更是靈魂的共鳴。從溫體嚴選的極致肉品到每日產地直送的珍稀海味，每一道料理都蘊含著對食材的最高敬意。</p>
+        </div>
+    </section>
+
+    <section id="menu" style="background: #0a0a0a;">
+        <h2 class="section-title">經典雋永</h2>
+        <p class="section-subtitle">Signature Selection</p>
+        <div class="features">
+            <div class="feature-box">
+                <h3>極黑和牛</h3>
+                <p>油花如大理石般細緻分佈，經過精準火候煎烤，入口即化，肉汁鮮甜飽滿。</p>
+            </div>
+            <div class="feature-box">
+                <h3>深海珍稀</h3>
+                <p>空運來台活體海鮮，保留最原始的純粹鮮甜，海味在舌尖綻放。</p>
+            </div>
+            <div class="feature-box">
+                <h3>時令珍釀</h3>
+                <p>專業侍酒師為每一道餐點嚴選佐餐佳釀，將料理層次昇華至全新境界。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="booking">
+        <h2 class="section-title">尊榮入席</h2>
+        <p class="section-subtitle">席次有限，採完全預約制</p>
+        <p style="margin-bottom: 40px; color: #ccc;">為確保服務品質與食材鮮度，請透過我們的官方客服進行預約與客製化需求討論。</p>
+        <!-- 這裡可以換成你的 LINE 官方帳號連結 -->
+        <a href="https://line.me/tw/" class="btn-gold" target="_blank">聯繫 LINE 官方專員</a>
+    </section>
+
+    <footer>
+        &copy; 2026 Luxury Dining. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
